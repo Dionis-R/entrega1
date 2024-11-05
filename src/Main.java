@@ -13,9 +13,13 @@ public class Main {
         int numFilas = 0;
         int numColumnas = 0;
         int userOption;
-        int suma =0;
-        int valor=0;
-        int resultado =0;
+        int suma = 0;
+        int valor = 0;
+        int resultado = 0;
+        int x = 0;
+        int y=0;
+        int contadorMenu=2;
+
         String messageMenu = ("Elige una opcion del menu \n [2] Poner bomba \n [1]Mostrar matriz \n [0]Salir");
         String menssageEndOfGame = ("Estas seguro de que quieres salir del juego?\n escribe y para salir");
 
@@ -53,20 +57,95 @@ public class Main {
 
             System.out.println();
         }
+        /*intruduciendo la coordenada x
 
-        int fila= 1;
+        System.out.println("introduce la coordenada x");
+        Scanner input = new Scanner(System.in);
+        x = input.nextInt();
 
-        for (int i = 0; i < matriz.length; i++) {
+                           */
+
+        /*introduciendo la coordenada y
+
+        System.out.println("introduce la coordenada y");
+        Scanner input1 = new Scanner(System.in);
+        y = input1.nextInt();
+
+                                */
+
+        /*comprobando si la coordenada x e y  estan en la matriz
+
+        if((x < matriz.length) && (y < matriz[x].length)) {
+
+            for (int i = 0; i < matriz.length; i++) {
+
+                System.out.print(matriz[x][i]);
+
+            }
+            System.out.println("    son los numeros de la fila");
+
+            for (int j = 0; j < matriz[y].length; j++) {
+
+                System.out.print(matriz[j][y]);
+
+            }
+            System.out.println("    son los numeros de la columna");
+
+            }else{
+                System.out.println("la coodenada x no existe en la matriz");
 
 
-            System.out.print(matriz[fila][i] +=valor);
-              resultado =i+valor;
-        }
-            System.out.println();
-        System.out.println();
-        System.out.println(resultado);
+            }
+                                 */
+                             //leyendo datos
 
-        }
+        do {
+            System.out.println("introduce la coordenada x");
+            Scanner input = new Scanner(System.in);
+            x = input.nextInt();
+
+
+            System.out.println("introduce la coordenada y");
+            Scanner input1 = new Scanner(System.in);
+            y = input1.nextInt();
+
+                  //condicion para evaluar la matriz
+
+
+            if(((x >=0 )&&(x < matriz.length)) && ((y>=0) &&(y < matriz[x].length))) {
+
+
+                  // bucle for para las filas
+
+
+                for (int i = 0; i < matriz.length; i++) {
+
+                    System.out.print(matriz[x][i]);
+
+                }
+                System.out.println("    son los numeros de la fila");
+
+                // Bucle for para las columnas
+
+                for (int j = 0; j < matriz[y].length; j++) {
+
+                    System.out.print(matriz[j][y]);
+
+                }
+                System.out.println("    son los numeros de la columna");
+                contadorMenu=0;                                               //variable de control para salir
+
+            }else {
+                System.out.println("la coodenada x no existe en la matriz");
+            }
+            contadorMenu --;                                                  // variable de control decremental
+
+        } while (contadorMenu >0);                                            // condicion para salir
+
 
 
     }
+
+
+    }
+
