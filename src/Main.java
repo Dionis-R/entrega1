@@ -15,7 +15,7 @@ public class Main {
         int userOption;
         int suma = 0;
         int numerosEnFila = 0;
-        int resultado = 0;
+        int numerosEnColumna= 0;
         int x = 0;
         int y=0;
         int contadorMenu=2;
@@ -121,13 +121,17 @@ public class Main {
                             // Bucle for para las columnas
 
                             for (int j=0; j< matriz[y].length;j++) {
+                                numerosEnColumna = matriz[j][y];                      //guardando los numeros de cada columna
+                                sumacolumna += matriz[j][y];                          //incrementando los numeros de cada columna
 
-                                sumacolumna += matriz[j][y];
-
-                                System.out.println("la suma de la columna es" + sumacolumna);
+                               System.out.print(numerosEnColumna+"+");                //imprimiendo los numeros de cada columan
 
                             }
-                            System.out.println("la explosion es de "+(sumacolumna+sumafila));
+                            System.out.println("la suma de la columna es" + sumacolumna);       //imprimiendo la suma de la columna
+
+                                                                  //Explosion
+
+                            System.out.println("la explosion es de "+(sumacolumna+sumafila));   //imprimiendo el valor de la explosion.
 
                             contadorMenu=0;                                               //variable de control para salir
 
