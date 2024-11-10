@@ -116,7 +116,7 @@ public class Main {
 
 
                             }
-                            System.out.println("la suma de fila es +"+sumafila);     //imprimiendo la suma total
+                            System.out.println("la suma de fila es "+sumafila);     //imprimiendo la suma total
 
                             // Bucle for para las columnas
 
