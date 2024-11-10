@@ -14,11 +14,13 @@ public class Main {
         int numColumnas = 0;
         int userOption;
         int suma = 0;
-        int valor = 0;
+        int numerosEnFila = 0;
         int resultado = 0;
         int x = 0;
         int y=0;
         int contadorMenu=2;
+        int sumafila=0;
+        int sumacolumna=0;
 
         String messageMenu = ("Elige una opcion del menu \n [2] Poner bomba \n [1]Mostrar matriz \n [0]Salir");
         String menssageEndOfGame = ("Estas seguro de que quieres salir del juego?\n escribe y para salir");
@@ -56,47 +58,120 @@ public class Main {
             }
 
             System.out.println();
+
         }
-        /*intruduciendo la coordenada x
 
-        System.out.println("introduce la coordenada x");
-        Scanner input = new Scanner(System.in);
-        x = input.nextInt();
+        //Bucle del menu
+        do {
 
-                           */
+            System.out.println(messageMenu);             //imprimiendo las opciones del menu
 
-        /*introduciendo la coordenada y
 
-        System.out.println("introduce la coordenada y");
-        Scanner input1 = new Scanner(System.in);
-        y = input1.nextInt();
+            Scanner input = new Scanner(System.in);      //leyendo valor de entrada de usuario
+            userOption = input.nextInt();
+            if (userOption < 0 || userOption > 2) {        // condicion para mostrar mensaje
+                System.out.println("valor incorrecto!!!");
+            }
 
-                                */
+            switch (userOption) {
 
-        /*comprobando si la coordenada x e y  estan en la matriz
+                case 0:{
+                    System.exit(0);
+            }
+                case 1:
 
-        if((x < matriz.length) && (y < matriz[x].length)) {
+                for (int filas = 0; filas < matriz.length; filas++) {
+                    for (int columnas = 0; columnas < matriz[filas].length; columnas++) {
+                        System.out.print(matriz[filas][columnas] + " ");
+                    }
 
-            for (int i = 0; i < matriz.length; i++) {
+                    System.out.println();
+                }
+                break;
 
-                System.out.print(matriz[x][i]);
+                case 2: {
+                                          //leyendo los valores de las coordenadas
+                    do {
+                        System.out.println("introduce la coordenada x");
+                        Scanner inputx = new Scanner(System.in);
+                        x = input.nextInt();
+
+
+                        System.out.println("introduce la coordenada y");
+                        Scanner inputy = new Scanner(System.in);
+                        y = inputy.nextInt();
+
+                        //condicion para evaluar la matriz
+
+
+                        if(((x >=0 )&&(x < matriz.length)) && ((y>=0) &&(y < matriz[x].length))) {
+
+
+                            // bucle for para las filas
+                            for (int i = 0; i < matriz.length; i++) {
+
+                                numerosEnFila= matriz[x][i];                          //guardando los numeros de cada fila
+                                sumafila += matriz[x][i];                             //incrementando los numeros de cada fila
+                                System.out.print(numerosEnFila+"+");                  //imprimiendo los numeros de cada fila
+
+
+                            }
+                            System.out.println("la suma de fila es +"+sumafila);     //imprimiendo la suma total
+
+                            // Bucle for para las columnas
+
+                            for (int j=0; j< matriz[y].length;j++) {
+
+                                sumacolumna += matriz[j][y];
+
+                                System.out.println("la suma de la columna es" + sumacolumna);
+
+                            }
+                            System.out.println("la explosion es de "+(sumacolumna+sumafila));
+
+                            contadorMenu=0;                                               //variable de control para salir
+
+                        }else {
+                            System.out.println("la coodenada x no existe en la matriz");
+                        }
+                        contadorMenu --;                                                  // variable de control decremental
+
+                    } while (contadorMenu >0);                                            // condicion para salir
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                }
 
             }
-            System.out.println("    son los numeros de la fila");
-
-            for (int j = 0; j < matriz[y].length; j++) {
-
-                System.out.print(matriz[j][y]);
-
-            }
-            System.out.println("    son los numeros de la columna");
-
-            }else{
-                System.out.println("la coodenada x no existe en la matriz");
 
 
-            }
-                                 */
+
+
+        }while (userOption < 0 || userOption > 2);;
+
+
+
+
+
+
+
+
+
+                                         /*
+
+
                              //leyendo datos
 
         do {
@@ -142,7 +217,7 @@ public class Main {
 
         } while (contadorMenu >0);                                            // condicion para salir
 
-
+                                             */
 
     }
 
