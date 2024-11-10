@@ -16,7 +16,7 @@ public class Main {
         int suma = 0;
         int numerosEnFila = 0;
         int numerosEnColumna= 0;
-        int x = 0;
+        int x=0;
         int y=0;
         int contadorMenu=2;
         int sumafila=0;
@@ -132,6 +132,32 @@ public class Main {
                                                                   //Explosion
 
                             System.out.println("la explosion es de "+(sumacolumna+sumafila));   //imprimiendo el valor de la explosion.
+
+                                                                  //actualizar la matriz
+
+                             // actualizando filas
+
+                            for (int fila = 0; fila < matriz.length; fila++) {
+                                for (int columna = 0; columna < matriz[fila].length; columna++) {
+                                    System.out.print(matriz[fila][columna]);
+
+
+
+                                    for (int i = 0; i < matriz.length; i++) {
+                                        matriz[x][i]=0;
+                                        for (int j=0; j< matriz[y].length;j++){
+                                        matriz[j][y]=0;
+
+                                      }
+
+                                    }
+
+
+                                }
+
+                                System.out.println();
+                            }
+
 
                             contadorMenu=0;                                               //variable de control para salir
 
