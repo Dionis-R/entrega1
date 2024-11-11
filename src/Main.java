@@ -104,11 +104,11 @@ public class Main {
                         //condicion para evaluar la matriz
 
 
-                        if(((x >=0 )&&(x < matriz.length)) && ((y>=0) &&(y < matriz[x].length))) {
+                       if(((x >=0 )&& (y>=0)) && ((x < matriz.length)&&(y < matriz[x].length))) {
 
 
                             // bucle for para las filas
-                            for (int i = 0; i < matriz.length; i++) {
+                            for (int i = 0; i < (matriz.length); i++) {
 
                                 numerosEnFila= matriz[x][i];                          //guardando los numeros de cada fila
                                 sumafila += matriz[x][i];                             //incrementando los numeros de cada fila
@@ -120,7 +120,7 @@ public class Main {
 
                             // Bucle for para las columnas
 
-                            for (int j=0; j< matriz[y].length;j++) {
+                            for (int j=0; j< (matriz[y].length);j++) {
                                 numerosEnColumna = matriz[j][y];                      //guardando los numeros de cada columna
                                 sumacolumna += matriz[j][y];                          //incrementando los numeros de cada columna
 
@@ -137,20 +137,24 @@ public class Main {
 
                              // actualizando filas
 
-                            for (int fila = 0; fila < matriz.length; fila++) {
-                                for (int columna = 0; columna < matriz[fila].length; columna++) {
-                                    System.out.print(matriz[fila][columna]);
+                            for (int filas = 0; filas < matriz.length; filas++) {
+                                for (int columnas = 0; columnas  < matriz[x].length; columnas++) {
 
 
 
-                                    for (int i = 0; i < matriz.length; i++) {
-                                        matriz[x][i]=0;
-                                        for (int j=0; j< matriz[y].length;j++){
-                                        matriz[j][y]=0;
 
+
+
+                                    for ( int i =0; i < (matriz.length); i++) {
+                                        for (int j=0;j< (matriz[y].length);j++) {
+
+
+                                            matriz[x][i] = 0;
+                                            matriz[j][y] = 0;
+                                        }
                                       }
 
-                                    }
+                                    System.out.print(matriz[filas][columnas]);
 
 
                                 }
