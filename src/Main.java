@@ -140,11 +140,6 @@ public class Main {
                             for (int filas = 0; filas < matriz.length; filas++) {
                                 for (int columnas = 0; columnas  < matriz[x].length; columnas++) {
 
-
-
-
-
-
                                     for ( int i =0; i < (matriz.length); i++) {
                                         for (int j=0;j< (matriz[y].length);j++) {
 
