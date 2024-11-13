@@ -25,19 +25,31 @@ public class Main {
         String messageMenu = ("Elige una opcion del menu \n [2] Poner bomba \n [1]Mostrar matriz \n [0]Salir");
         String menssageEndOfGame = ("Estas seguro de que quieres salir del juego?\n escribe y para salir");
 
-        /* Bucle para el ingreso de informacion del usuario*/
+                      //Bucle para ingreso de filas
+                      //Comprobacion de los valores antes de seguir
 
-        do {
-            System.out.println("introduce el numero de filas");
-            Scanner input = new Scanner(System.in);
-            numFilas = input.nextInt();
-            System.out.println("introduce el numero de columnas");
-            numColumnas = input.nextInt();
-            if (numFilas < 1 || numFilas > 9 && numColumnas < 1 || numColumnas > 9) {
-                System.out.println("el valor introdocido no es correcto");
-            }
+            do {
+                System.out.println("introduce el numero de filas");
+                Scanner input = new Scanner(System.in);
+                numFilas = input.nextInt();
+                if (numFilas < 2 || numFilas > 9 && numColumnas < 2 || numColumnas > 9) {
+                    System.out.println("el numero de filas tiene que ser 2 o mas y menor que 9");
+                }
+            }while(numFilas < 2 || numFilas > 9 );
 
-        } while (numFilas < 1 || numFilas > 9 && numColumnas < 1 || numColumnas > 9);
+
+                              //Bucle para ingreso de columnas
+                              //Comprobacion de los valores antes de seguir
+            do {
+                System.out.println("introduce el numero de columnas");
+                Scanner input = new Scanner(System.in);
+                numColumnas = input.nextInt();
+                if ( numColumnas < 2 || numColumnas > 9) {
+                    System.out.println("el numero de columna tiene que ser 2 o mas y menor o igual que 9");
+                }
+            }while(numColumnas < 2 || numColumnas > 9);
+
+
 
 
         //Generando la matriz
@@ -62,6 +74,8 @@ public class Main {
         }
 
         //Bucle del menu
+
+
         do {
 
             System.out.println(messageMenu);             //imprimiendo las opciones del menu
@@ -69,6 +83,7 @@ public class Main {
 
             Scanner input = new Scanner(System.in);      //leyendo valor de entrada de usuario
             userOption = input.nextInt();
+
             if (userOption < 0 || userOption > 2) {        // condicion para mostrar mensaje
                 System.out.println("valor incorrecto!!!");
             }
@@ -92,22 +107,41 @@ public class Main {
                 case 2: {
                                           //leyendo los valores de las coordenadas
                     do {
-                        System.out.println("introduce la coordenada x");
-                        Scanner inputx = new Scanner(System.in);
-                        x = input.nextInt();
+
+                                         //leyendo los valores de la coordenada x
+                                         //comprobando valores antes de seguir
+                        do {
+
+                            System.out.println("introduce la coordenada x");
+                            Scanner inputx = new Scanner(System.in);
+                            x = input.nextInt();
+                            if ((x <0 ) || (x >= matriz.length)){
+                                System.out.println("la coordenada x no existe\n" +
+                                        "introduce un numero entre 0 y "+ " " +(matriz.length -1));
+                            }
+                        }while((x <0 ) || (x >= matriz.length));
+
+                                        //Leyendo valores en la coordenada y
+                                        //Comprobando valores antes de seguir
+
+                        do {
+
+                            System.out.println("introduce la coordenada y");
+                            Scanner inputy = new Scanner(System.in);
+                            y = inputy.nextInt();
+
+                           if ((y<0) || (y >= matriz.length)) {
+                               System.out.println("la coordenada y no existe en la matriz \n" +
+                                       "introduce un numero entre 0 y"+" " +(matriz.length -1));
+                            }
+
+                        }while ((y < 0) ||(y >= matriz.length));
 
 
-                        System.out.println("introduce la coordenada y");
-                        Scanner inputy = new Scanner(System.in);
-                        y = inputy.nextInt();
-
-                        //condicion para evaluar la matriz
 
 
-                       if(((x >=0 )&& (y>=0)) && ((x < matriz.length)&&(y < matriz[x].length))) {
+                               //Bucle for para recorrer  las filas
 
-
-                            // bucle for para las filas
                             for (int i = 0; i < (matriz.length); i++) {
 
                                 numerosEnFila= matriz[x][i];                          //guardando los numeros de cada fila
@@ -118,7 +152,7 @@ public class Main {
                             }
                             System.out.println("la suma de fila es "+sumafila);     //imprimiendo la suma total
 
-                            // Bucle for para las columnas
+                            // Bucle for para recorrer  las columnas
 
                             for (int j=0; j< (matriz[y].length);j++) {
                                 numerosEnColumna = matriz[j][y];                      //guardando los numeros de cada columna
@@ -156,100 +190,17 @@ public class Main {
 
                                 System.out.println();
                             }
-
-
-                            contadorMenu=0;                                               //variable de control para salir
-
-                        }else {
-                            System.out.println("la coodenada x no existe en la matriz");
-                        }
-                        contadorMenu --;                                                  // variable de control decremental
-
-                    } while (contadorMenu >0);                                            // condicion para salir
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        break;
+                    } while ((userOption < 0) || (userOption >3));              //condicion para volver a mostrar el menu
 
 
                 }
 
             }
-
-
-
 
         }while (userOption < 0 || userOption > 2);;
 
-
-
-
-
-
-
-
-
-                                         /*
-
-
-                             //leyendo datos
-
-        do {
-            System.out.println("introduce la coordenada x");
-            Scanner input = new Scanner(System.in);
-            x = input.nextInt();
-
-
-            System.out.println("introduce la coordenada y");
-            Scanner input1 = new Scanner(System.in);
-            y = input1.nextInt();
-
-                  //condicion para evaluar la matriz
-
-
-            if(((x >=0 )&&(x < matriz.length)) && ((y>=0) &&(y < matriz[x].length))) {
-
-
-                  // bucle for para las filas
-
-
-                for (int i = 0; i < matriz.length; i++) {
-
-                    System.out.print(matriz[x][i]);
-
-                }
-                System.out.println("    son los numeros de la fila");
-
-                // Bucle for para las columnas
-
-                for (int j = 0; j < matriz[y].length; j++) {
-
-                    System.out.print(matriz[j][y]);
-
-                }
-                System.out.println("    son los numeros de la columna");
-                contadorMenu=0;                                               //variable de control para salir
-
-            }else {
-                System.out.println("la coodenada x no existe en la matriz");
-            }
-            contadorMenu --;                                                  // variable de control decremental
-
-        } while (contadorMenu >0);                                            // condicion para salir
-
-                                             */
-
     }
-
 
     }
 
