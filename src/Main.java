@@ -168,9 +168,6 @@ public class Main {
                         // actualizando filas
 
 
-
-
-
                                 for (int i = 0; i < (matriz.length); i++) {
 
 
