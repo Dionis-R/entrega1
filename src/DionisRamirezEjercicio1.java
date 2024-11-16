@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 
 
-public class Main {
+public class DionisRamirezEjercicio1 {
     public static void main(String[] args) {
 
         /* Declaracion de variables */
@@ -13,12 +13,10 @@ public class Main {
         int numFilas = 0;
         int numColumnas = 0;
         int userOption;
-        int suma = 0;
         int numerosEnFila = 0;
         int numerosEnColumna = 0;
         int x = 0;
         int y = 0;
-        int contadorMenu = 2;
         int sumafila = 0;
         int sumacolumna = 0;
         int[][] matriz;
