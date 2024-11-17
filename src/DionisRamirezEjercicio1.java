@@ -1,3 +1,6 @@
+
+
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 import java.util.Random;
@@ -128,7 +131,7 @@ public class DionisRamirezEjercicio1 {
 
                             if ((y < 0) || (y >= (matriz[x].length))) {
                                 System.out.println("la coordenada y no existe en la matriz \n" +
-                                        "introduce un numero entre 0 y" + " " + (matriz.length - 1));
+                                        "introduce un numero entre 0 y" + " " + (matriz[x].length - 1));
                             }
 
                         } while ((y < 0) || (y >= (matriz[x].length)));
@@ -166,20 +169,20 @@ public class DionisRamirezEjercicio1 {
                         // actualizando filas
 
 
-                                for (int i = 0; i < (matriz.length); i++) {
+                        for (int i = 0; i < (matriz.length); i++) {
 
 
-                                    for (int j = 0; j < matriz[0].length;j++) {
-                                        matriz[i][y] = 0;
-                                        matriz[x][j] = 0;
+                            for (int j = 0; j < matriz[0].length;j++) {
+                                matriz[i][y] = 0;
+                                matriz[x][j] = 0;
 
 
-                                        System.out.print(matriz[i][j]);
+                                System.out.print(matriz[i][j]);
 
-                                    }
-                                    System.out.println();
-                                }
-                                break;
+                            }
+                            System.out.println();
+                        }
+                        break;
                     } while ((userOption < 0) || (userOption > 3));              //condicion para volver a mostrar el menu
 
 
@@ -191,5 +194,4 @@ public class DionisRamirezEjercicio1 {
 
     }
 
-    }
-
+}
